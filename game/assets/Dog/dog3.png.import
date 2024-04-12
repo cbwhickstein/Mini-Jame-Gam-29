@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://1i3v546desx5"
-path="res://.godot/imported/dog3.png-76bccffd8739893e29c150c959ba4a2e.ctex"
+path="res://.godot/imported/dog3.png-877da780f64a3d2960c762448d13de97.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sunny Land Collection Files/Packs/Enemies Add-ons/Chibi Enemies Pack/Sprites/Dog/dog3.png"
-dest_files=["res://.godot/imported/dog3.png-76bccffd8739893e29c150c959ba4a2e.ctex"]
+source_file="res://assets/Dog/dog3.png"
+dest_files=["res://.godot/imported/dog3.png-877da780f64a3d2960c762448d13de97.ctex"]
 
 [params]
 

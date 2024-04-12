@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dvq2n7m10tf5x"
-path="res://.godot/imported/dog-idlet3.png-c4fb63a30fe1e7b9211cd07f503366ea.ctex"
+path="res://.godot/imported/dog-idlet3.png-c2c64d84d7b2825434f38bad9ca9b2fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sunny Land Collection Files/Packs/Enemies Add-ons/Chibi Enemies Pack/Sprites/Dog-idle/dog-idlet3.png"
-dest_files=["res://.godot/imported/dog-idlet3.png-c4fb63a30fe1e7b9211cd07f503366ea.ctex"]
+source_file="res://assets/Dog-idle/dog-idlet3.png"
+dest_files=["res://.godot/imported/dog-idlet3.png-c2c64d84d7b2825434f38bad9ca9b2fa.ctex"]
 
 [params]
 
