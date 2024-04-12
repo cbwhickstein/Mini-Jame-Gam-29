@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b1r63pmgk20f0"]
+[gd_scene load_steps=6 format=3 uid="uid://b1r63pmgk20f0"]
 
 [ext_resource type="Script" path="res://scripts/background.gd" id="1_5nbgb"]
 [ext_resource type="Texture2D" uid="uid://cpbgqhtvw5eun" path="res://assets/Grass.png" id="1_cvg0e"]
@@ -513,11 +513,22 @@ terrain_set_0/terrain_0/name = "grass"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_0hs35")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_rv2hi"]
+
 [node name="Background" type="Node2D"]
-position = Vector2(542, 476)
+position = Vector2(0, 643)
 script = ExtResource("1_5nbgb")
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
 tile_set = SubResource("TileSet_p1ifv")
 format = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, -644)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_rv2hi")
+
+[node name="Camera2D" type="Camera2D" parent="StaticBody2D"]
+position = Vector2(578, 323)
