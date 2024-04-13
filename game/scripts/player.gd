@@ -17,6 +17,7 @@ var lane_change_speed_multiplier = 2.0
 var hurt = false
 var hurt_animation_timer = 0.0
 var hurt_animation_timer_max = 0.5
+var life_points = 3
 
 var collision = null
 
@@ -42,14 +43,23 @@ func _process(delta):
 		if (collision.get_collider().name.contains("enemy")):
 			player_hurt.emit(collision.get_collider())
 			hurt = true
+			life_points -= 1
 		
 	# set sprite
 	if (hurt):
 		if (hurt_animation_timer == 0.0):
 			animated_sprite_2d.play("hurt")
+			if (life_points == 0):
+				speed_multiplier = 0
 		hurt_animation_timer += delta
 		if (hurt_animation_timer > hurt_animation_timer_max):
 			hurt_animation_timer = 0.0
 			hurt = false
+			
+			if (life_points == 0):
+				get_tree().change_scene_to_file("res://Scenes/game_over_screen.tscn")
+				
+			
+			
 	else:
 		animated_sprite_2d.play("run_up")
