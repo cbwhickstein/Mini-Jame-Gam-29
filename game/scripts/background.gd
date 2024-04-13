@@ -20,7 +20,7 @@ var row_list: Array = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# sets the initial map
-	for h in range(-map_height, 0):
+	for h in range(0, -map_height, -1):
 		row_list.push_front([])
 		for w in range(0, map_width):
 			var current_pos = Vector2i(w, h)
