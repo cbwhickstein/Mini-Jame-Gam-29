@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://c442w2ntde2ut"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_3ldxi"]
-[ext_resource type="Texture2D" uid="uid://cqujbi58g28gw" path="res://assets/jolyne_jjba_spreadsheet.png" id="1_in2na"]
+[ext_resource type="Texture2D" uid="uid://du8yjj0nl5412" path="res://assets/jolyne_jjba_spreadsheet.png" id="1_in2na"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7g72p"]
 radius = 9.0
