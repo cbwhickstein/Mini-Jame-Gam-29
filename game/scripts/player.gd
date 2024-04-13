@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 # Signals
-signal player_hurt
+signal player_hurt(collider)
 
 # Subnodes
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
@@ -11,11 +11,15 @@ var speed = 10.0
 var current_pos = 1 # possible 0, 1, 2
 
 var x_position_multiplier = 100
-var speed_multiplier = 0.25
-var original_speed_multiplier = 0.25
+var original_speed_multiplier = 10
+var speed_multiplier = 10
 var lane_change_speed_multiplier = 2.0
+var hurt = false
+var hurt_animation_timer = 0.0
+var hurt_animation_timer_max = 0.5
 
 var collision = null
+
 
 func _ready():
 	position.x = current_pos * x_position_multiplier
@@ -33,13 +37,20 @@ func _process(delta):
 	movement.x = move_toward(position.x, current_pos * x_position_multiplier, 20) - position.x
 	
 	# process collision
-	collision = move_and_collide(movement * speed_multiplier)
+	collision = move_and_collide(movement * speed_multiplier * delta)
 	if (collision != null):
-		if (collision.get_collider().name == "enemy"):
-			player_hurt.emit()
+		print(collision.get_collider().name)
+		if (collision.get_collider().name.contains("enemy")):
+			player_hurt.emit(collision.get_collider())
+			hurt = true
+			print("emitted")
 		
 	# set sprite
-	if (movement.length() > 0):
-		animated_sprite_2d.play("run_up")
+	if (hurt):
+		animated_sprite_2d.play("hurt")
+		hurt_animation_timer += delta
+		if (hurt_animation_timer > hurt_animation_timer_max):
+			hurt_animation_timer = 0.0
+			hurt = false
 	else:
-		animated_sprite_2d.play("idle_up")
+		animated_sprite_2d.play("run_up")
