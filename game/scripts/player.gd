@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 # Signals
 signal player_hurt(collider)
+signal player_collect(collider)
 
 # Subnodes
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
@@ -44,6 +45,8 @@ func _process(delta):
 			player_hurt.emit(collision.get_collider())
 			hurt = true
 			life_points -= 1
+		elif (collision.get_collider().name.contains("collectable")):
+			player_collect.emit(collision.get_collider())
 		
 	# set sprite
 	if (hurt):
