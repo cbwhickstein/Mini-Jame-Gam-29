@@ -39,15 +39,14 @@ func _process(delta):
 	# process collision
 	collision = move_and_collide(movement * speed_multiplier * delta)
 	if (collision != null):
-		print(collision.get_collider().name)
 		if (collision.get_collider().name.contains("enemy")):
 			player_hurt.emit(collision.get_collider())
 			hurt = true
-			print("emitted")
 		
 	# set sprite
 	if (hurt):
-		animated_sprite_2d.play("hurt")
+		if (hurt_animation_timer == 0.0):
+			animated_sprite_2d.play("hurt")
 		hurt_animation_timer += delta
 		if (hurt_animation_timer > hurt_animation_timer_max):
 			hurt_animation_timer = 0.0
