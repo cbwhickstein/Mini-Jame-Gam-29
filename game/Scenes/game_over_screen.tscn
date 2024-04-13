@@ -1,3 +1,40 @@
-[gd_scene format=3 uid="uid://bdctaknpbxdkg"]
+[gd_scene load_steps=3 format=3 uid="uid://cli164egfwypj"]
+
+[ext_resource type="Texture2D" uid="uid://3j4lamwrhfjj" path="res://assets/Loading screen/backg_loading.png" id="1_kxe27"]
+[ext_resource type="FontFile" uid="uid://cys28ednmrwfa" path="res://assets/Bitmgothic/Bitmgothic.otf" id="2_vbe0t"]
 
 [node name="GameOverScreen" type="Node2D"]
+
+[node name="background" type="TextureRect" parent="."]
+show_behind_parent = true
+visibility_layer = 2
+texture_filter = 1
+offset_right = 1160.0
+offset_bottom = 648.0
+mouse_filter = 2
+texture = ExtResource("1_kxe27")
+stretch_mode = 4
+
+[node name="Game_over" type="Label" parent="."]
+offset_left = 400.0
+offset_top = 80.0
+offset_right = 780.0
+offset_bottom = 160.0
+theme_override_fonts/font = ExtResource("2_vbe0t")
+theme_override_font_sizes/font_size = 80
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 184.0
+offset_top = 216.0
+offset_right = 540.0
+offset_bottom = 428.0
+theme_override_fonts/font = ExtResource("2_vbe0t")
+theme_override_font_sizes/font_size = 40
+text = "Highscore:
+
+Emporio's collected:
+
+Turtles collected:"

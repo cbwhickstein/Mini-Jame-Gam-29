@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://c442w2ntde2ut" path="res://Scenes/player.tscn" id="1_xhxox"]
 [ext_resource type="PackedScene" uid="uid://b1r63pmgk20f0" path="res://Scenes/background.tscn" id="2_buwbr"]
-[ext_resource type="PackedScene" uid="uid://bnylsj0a4060s" path="res://Scenes/camera_guy.tscn" id="3_18gb0"]
-[ext_resource type="PackedScene" uid="uid://cs228hen6lb5u" path="res://Scenes/enemy_spawner.tscn" id="5_vbay7"]
+[ext_resource type="PackedScene" path="res://Scenes/camera_guy.tscn" id="3_18gb0"]
+[ext_resource type="PackedScene" path="res://Scenes/enemy_spawner.tscn" id="5_vbay7"]
 [ext_resource type="Script" path="res://scripts/enemy_spawner.gd" id="6_djxuu"]
 
 [node name="TestScene" type="Node2D"]
