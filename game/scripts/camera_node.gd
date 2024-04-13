@@ -2,6 +2,7 @@ extends Node2D
 
 # global vars
 var player: CharacterBody2D = null
+var y_offset = 125
 
 func _ready():
 	player = get_node("../Player")
@@ -13,4 +14,4 @@ func _ready():
 
 func _process(delta):
 	if (player != null):
-		position.y = player.position.y
+		position.y = player.position.y - y_offset

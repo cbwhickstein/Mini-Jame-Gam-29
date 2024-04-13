@@ -8,9 +8,10 @@
 
 [node name="Player" parent="." instance=ExtResource("1_xhxox")]
 z_index = 1
-position = Vector2(3, 1)
+position = Vector2(2, 124)
 
 [node name="Background" parent="." instance=ExtResource("2_buwbr")]
 position = Vector2(-343, 206)
 
 [node name="camera_guy" parent="." instance=ExtResource("3_18gb0")]
+position = Vector2(1, 3)
