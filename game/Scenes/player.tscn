@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c442w2ntde2ut"]
+[gd_scene load_steps=10 format=3 uid="uid://c442w2ntde2ut"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_3ldxi"]
 [ext_resource type="Texture2D" uid="uid://du8yjj0nl5412" path="res://assets/jolyne_jjba_spreadsheet.png" id="1_in2na"]
@@ -6,6 +6,10 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7g72p"]
 radius = 9.0
 height = 26.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ib87e"]
+atlas = ExtResource("1_in2na")
+region = Rect2(0, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_60ohk"]
 atlas = ExtResource("1_in2na")
@@ -15,16 +19,24 @@ region = Rect2(0, 0, 32, 32)
 atlas = ExtResource("1_in2na")
 region = Rect2(32, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_gs5og"]
+atlas = ExtResource("1_in2na")
+region = Rect2(0, 32, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_xldt0"]
 atlas = ExtResource("1_in2na")
 region = Rect2(32, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_424wx"]
-atlas = ExtResource("1_in2na")
-region = Rect2(0, 64, 32, 32)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_316u7"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ib87e")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_60ohk")
@@ -43,10 +55,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xldt0")
+"texture": SubResource("AtlasTexture_gs5og")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_424wx")
+"texture": SubResource("AtlasTexture_xldt0")
 }],
 "loop": true,
 "name": &"run_up",

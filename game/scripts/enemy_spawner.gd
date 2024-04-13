@@ -39,7 +39,6 @@ func create_new_enemy():
 		new_enemy.position = Vector2((randi() % 3) * x_position_multiplier, player.position.y - y_offset)
 	
 func _on_player_hurt(collider):
-	print("Collision")
 	enemy_list.erase(collider)
 	remove_child(collider)
 	collider.queue_free()
