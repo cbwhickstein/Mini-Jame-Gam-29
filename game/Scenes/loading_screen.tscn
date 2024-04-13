@@ -84,11 +84,11 @@ stretch_mode = 4
 
 [node name="Label" type="Label" parent="."]
 texture_filter = 1
-offset_left = 320.0
+offset_left = 152.0
 offset_top = 48.0
-offset_right = 863.0
+offset_right = 1045.0
 offset_bottom = 120.0
-text = "Creative Game Name"
+text = "Jolyne's weird running Adventure"
 label_settings = SubResource("LabelSettings_o0l1m")
 horizontal_alignment = 1
 vertical_alignment = 1
