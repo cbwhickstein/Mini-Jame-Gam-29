@@ -26,7 +26,7 @@ func _ready():
 		tile_map.set_cells_terrain_connect(0,row_list[0],0,0)
 		
 	# connect to player node for movement capturing
-	player = get_node("Player")
+	player = get_node("../Player")
 	if player == null:
 		print("Player could not connect to background node")	
 	
@@ -42,7 +42,6 @@ func _process(_delta):
 			
 			# create new row
 			row_list.push_front([])
-			print(row_list.size())
 			for w in range(0, map_width):
 				var current_pos = Vector2i(w, row_list[1][0].y - 1)
 				row_list[0].push_front(current_pos)
