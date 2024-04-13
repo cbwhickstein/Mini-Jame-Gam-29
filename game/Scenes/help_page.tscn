@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=3 uid="uid://dugu2ax4y585c"]
+
+[ext_resource type="Script" path="res://Scenes/help_page.gd" id="1_fooc0"]
+[ext_resource type="Texture2D" uid="uid://3j4lamwrhfjj" path="res://assets/Loading screen/backg_loading.png" id="1_giuto"]
+[ext_resource type="FontFile" uid="uid://cys28ednmrwfa" path="res://assets/Bitmgothic/Bitmgothic.otf" id="2_eyo57"]
+[ext_resource type="Texture2D" uid="uid://b54bkwfcxwe8h" path="res://assets/Collectables/collectables.png" id="4_pp4or"]
+[ext_resource type="Texture2D" uid="uid://t0ovn8lujrbj" path="res://assets/Enemies/enemies_spreadsheet.png" id="5_6uqgj"]
+
+[node name="HelpPage" type="Node2D"]
+script = ExtResource("1_fooc0")
+
+[node name="background" type="TextureRect" parent="."]
+show_behind_parent = true
+visibility_layer = 2
+texture_filter = 1
+offset_right = 1160.0
+offset_bottom = 648.0
+mouse_filter = 2
+texture = ExtResource("1_giuto")
+stretch_mode = 4
+
+[node name="Explanantion" type="Label" parent="."]
+offset_left = 224.0
+offset_top = 72.0
+offset_right = 940.0
+offset_bottom = 112.0
+theme_override_fonts/font = ExtResource("2_eyo57")
+theme_override_font_sizes/font_size = 40
+text = "Dodge enemies and collect falling items 
+to get as far as you can :)"
+horizontal_alignment = 1
+
+[node name="Dodge" type="Label" parent="."]
+offset_left = 272.0
+offset_top = 192.0
+offset_right = 384.0
+offset_bottom = 232.0
+theme_override_fonts/font = ExtResource("2_eyo57")
+theme_override_font_sizes/font_size = 40
+text = "Dodge"
+
+[node name="Collect" type="Label" parent="."]
+offset_left = 704.0
+offset_top = 200.0
+offset_right = 835.0
+offset_bottom = 240.0
+theme_override_fonts/font = ExtResource("2_eyo57")
+theme_override_font_sizes/font_size = 40
+text = "Collect"
+
+[node name="collectables" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(768, 392)
+scale = Vector2(-5.01093, 4.73791)
+texture = ExtResource("4_pp4or")
+
+[node name="Back_to_main" type="Button" parent="."]
+texture_filter = 1
+offset_left = 40.0
+offset_top = 32.0
+offset_right = 160.0
+offset_bottom = 96.0
+theme_override_fonts/font = ExtResource("2_eyo57")
+theme_override_font_sizes/font_size = 40
+text = "Back"
+
+[node name="dodgeables" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(320, 376)
+scale = Vector2(6.51667, 6.75)
+texture = ExtResource("5_6uqgj")
+
+[connection signal="pressed" from="Back_to_main" to="." method="_on_back_to_main_pressed"]
