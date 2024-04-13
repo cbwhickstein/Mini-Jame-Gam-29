@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://bsl0vrcctk53i"]
 
 [ext_resource type="Texture2D" uid="uid://6ljqksu87oh" path="res://assets/pucci-music.png" id="3_pcrkt"]
-[ext_resource type="Texture2D" uid="uid://dbwvctb3lrhw7" path="res://assets/jolyne_for_button.png" id="3_wwk1o"]
-[ext_resource type="Texture2D" uid="uid://3j4lamwrhfjj" path="res://assets/backg_loading.png" id="5_76xct"]
+[ext_resource type="Texture2D" uid="uid://dbwvctb3lrhw7" path="res://assets/Loading screen/jolyne_for_button.png" id="3_wwk1o"]
+[ext_resource type="Texture2D" uid="uid://3j4lamwrhfjj" path="res://assets/Loading screen/backg_loading.png" id="5_76xct"]
 [ext_resource type="FontFile" uid="uid://cys28ednmrwfa" path="res://assets/Bitmgothic/Bitmgothic.otf" id="6_pr8vm"]
 
 [sub_resource type="GDScript" id="GDScript_8fxqi"]
@@ -16,6 +16,10 @@ func _on_play_button_pressed():
 
 func _on_quit_button_pressed():
 	get_tree().quit()
+
+
+func _on_help_button_pressed():
+	get_tree().change_scene_to_file(\"res://Scenes/help_page.tscn\")
 "
 
 [sub_resource type="LabelSettings" id="LabelSettings_o0l1m"]
@@ -89,5 +93,16 @@ label_settings = SubResource("LabelSettings_o0l1m")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Help_button" type="Button" parent="."]
+texture_filter = 1
+offset_left = 1080.0
+offset_top = 24.0
+offset_right = 1128.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("6_pr8vm")
+theme_override_font_sizes/font_size = 40
+text = "?"
+
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Help_button" to="." method="_on_help_button_pressed"]
