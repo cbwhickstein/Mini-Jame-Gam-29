@@ -1,19 +1,55 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvqxa6meyrxhe"]
+[gd_scene load_steps=9 format=3 uid="uid://bvqxa6meyrxhe"]
 
-[ext_resource type="Texture2D" uid="uid://fg784jsvkogs" path="res://icon.svg" id="1_44bm6"]
 [ext_resource type="Script" path="res://Scenes/player.gd" id="1_x3l4c"]
+[ext_resource type="Texture2D" uid="uid://du8yjj0nl5412" path="res://assets/jolyne_jjba_spreadsheet.png" id="2_qi74i"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7g72p"]
-height = 36.0
+radius = 9.0
+height = 26.0
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ohdcx"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_60ohk"]
+atlas = ExtResource("2_qi74i")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2ckq"]
+atlas = ExtResource("2_qi74i")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xldt0"]
+atlas = ExtResource("2_qi74i")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_424wx"]
+atlas = ExtResource("2_qi74i")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_316u7"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_44bm6")
+"texture": SubResource("AtlasTexture_60ohk")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2ckq")
+}],
+"loop": true,
+"name": &"idle_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xldt0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_424wx")
+}],
+"loop": true,
+"name": &"run_up",
 "speed": 5.0
 }]
 
@@ -23,9 +59,12 @@ script = ExtResource("1_x3l4c")
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, -2)
 shape = SubResource("CapsuleShape2D_7g72p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
-position = Vector2(4.76837e-07, 0)
-scale = Vector2(0.126953, 0.222656)
-sprite_frames = SubResource("SpriteFrames_ohdcx")
+texture_filter = 1
+position = Vector2(-1, -2)
+sprite_frames = SubResource("SpriteFrames_316u7")
+animation = &"run_up"
+frame_progress = 0.493896

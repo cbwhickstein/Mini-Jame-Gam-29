@@ -5,7 +5,8 @@
 [node name="TestScene" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_xhxox")]
-position = Vector2(133, 224)
+position = Vector2(570, 303)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(566, 332)
+zoom = Vector2(2, 2)
