@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://de1i14ln0jb2t"]
+
+[ext_resource type="Texture2D" uid="uid://7qnyc6nduhdn" path="res://assets/Collectables/collectables.png" id="1_763cq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ga112"]
+height = 22.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bsjo"]
+atlas = ExtResource("1_763cq")
+region = Rect2(0, 22, 22, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ilbek"]
+atlas = ExtResource("1_763cq")
+region = Rect2(0, 0, 22, 22)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o5l0f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4bsjo")
+}],
+"loop": true,
+"name": &"emporio",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ilbek")
+}],
+"loop": true,
+"name": &"polnareff",
+"speed": 5.0
+}]
+
+[node name="collectable" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_ga112")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_o5l0f")
+animation = &"polnareff"
