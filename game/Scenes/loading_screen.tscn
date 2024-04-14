@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bsl0vrcctk53i"]
 
-[ext_resource type="Texture2D" uid="uid://6ljqksu87oh" path="res://assets/pucci-music.png" id="3_pcrkt"]
+[ext_resource type="Texture2D" uid="uid://ekstwy4h5n1l" path="res://assets/pucci-music.png" id="3_pcrkt"]
 [ext_resource type="Texture2D" uid="uid://dbwvctb3lrhw7" path="res://assets/Loading screen/jolyne_for_button.png" id="3_wwk1o"]
 [ext_resource type="Texture2D" uid="uid://3j4lamwrhfjj" path="res://assets/Loading screen/backg_loading.png" id="5_76xct"]
 [ext_resource type="FontFile" uid="uid://cys28ednmrwfa" path="res://assets/Bitmgothic/Bitmgothic.otf" id="6_pr8vm"]

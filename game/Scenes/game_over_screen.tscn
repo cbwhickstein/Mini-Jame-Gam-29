@@ -20,6 +20,7 @@ stretch_mode = 4
 
 [node name="Back_to_main" type="Button" parent="background"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 40.0
 offset_top = 32.0
 offset_right = 160.0
