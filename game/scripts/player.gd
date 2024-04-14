@@ -18,14 +18,15 @@ var lane_change_speed_multiplier = 2.0
 var hurt = false
 var hurt_animation_timer = 0.0
 var hurt_animation_timer_max = 0.5
+
 var life_points = 3
+var collect_points = 0
 
 var collision = null
 
 
 func _ready():
 	position.x = current_pos * x_position_multiplier
-	pass # Replace with function body.
 
 
 func _process(delta):
@@ -47,6 +48,8 @@ func _process(delta):
 			life_points -= 1
 		elif (collision.get_collider().name.contains("collectable")):
 			player_collect.emit(collision.get_collider())
+			collect_points += 1
+			
 		
 	# set sprite
 	if (hurt):
