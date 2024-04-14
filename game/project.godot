@@ -10,14 +10,19 @@ config_version=5
 
 [application]
 
-config/name="Mini Jame Gam 29"
+config/name="Jolyne's Wierd Running Adventure"
 run/main_scene="res://Scenes/loading_screen.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/show_image=false
+config/icon="res://assets/Loading screen/jolyne_for_button.png"
 
 [autoload]
 
 GlobalVars="*res://scripts/global_vars.gd"
+
+[display]
+
+window/size/resizable=false
 
 [rendering]
 

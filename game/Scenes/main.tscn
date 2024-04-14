@@ -1,3 +1,51 @@
-[gd_scene format=3 uid="uid://b5im6icutej0v"]
+[gd_scene load_steps=10 format=3 uid="uid://bqno0b5rjci5s"]
 
-[node name="Main" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://c442w2ntde2ut" path="res://Scenes/player.tscn" id="1_xhxox"]
+[ext_resource type="PackedScene" uid="uid://b1r63pmgk20f0" path="res://Scenes/background.tscn" id="2_buwbr"]
+[ext_resource type="PackedScene" uid="uid://bnylsj0a4060s" path="res://Scenes/camera_guy.tscn" id="3_18gb0"]
+[ext_resource type="Texture2D" uid="uid://ekstwy4h5n1l" path="res://assets/pucci-music.png" id="5_7a80q"]
+[ext_resource type="PackedScene" uid="uid://cs228hen6lb5u" path="res://Scenes/enemy_spawner.tscn" id="5_vbay7"]
+[ext_resource type="Script" path="res://scripts/enemy_spawner.gd" id="6_djxuu"]
+[ext_resource type="PackedScene" uid="uid://dn3bq02ben0ut" path="res://Scenes/collectable_spawner.tscn" id="6_tjscn"]
+[ext_resource type="PackedScene" uid="uid://d0sisa2htee7l" path="res://Scenes/clock_spawner.tscn" id="7_a1v4e"]
+[ext_resource type="Texture2D" uid="uid://defs8sygln3o3" path="res://assets/palmtree.png" id="8_ueyk1"]
+
+[node name="TestScene" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_xhxox")]
+z_index = 1
+position = Vector2(2, 124)
+
+[node name="Background" parent="." instance=ExtResource("2_buwbr")]
+position = Vector2(-343, 206)
+
+[node name="camera_guy" parent="." instance=ExtResource("3_18gb0")]
+position = Vector2(1, 3)
+
+[node name="Palmtree" type="TextureRect" parent="camera_guy"]
+texture_filter = 1
+offset_left = 151.0
+offset_top = -115.0
+offset_right = 190.0
+offset_bottom = -45.0
+scale = Vector2(3.5, 3.96667)
+texture = ExtResource("8_ueyk1")
+flip_h = true
+
+[node name="pucci" type="TextureRect" parent="camera_guy"]
+texture_filter = 1
+offset_left = -329.0
+offset_top = -155.0
+offset_right = -270.0
+offset_bottom = -52.0
+scale = Vector2(3.5, 3.96667)
+texture = ExtResource("5_7a80q")
+expand_mode = 1
+flip_h = true
+
+[node name="enemy_spawner" parent="." instance=ExtResource("5_vbay7")]
+script = ExtResource("6_djxuu")
+
+[node name="CollectableSpawner" parent="." instance=ExtResource("6_tjscn")]
+
+[node name="ClockSpawner" parent="." instance=ExtResource("7_a1v4e")]
