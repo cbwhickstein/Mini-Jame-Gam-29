@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cli164egfwypj"]
+[gd_scene load_steps=5 format=3 uid="uid://cli164egfwypj"]
 
 [ext_resource type="Script" path="res://Scenes/game_over_screen.gd" id="1_jso4r"]
 [ext_resource type="Texture2D" uid="uid://3j4lamwrhfjj" path="res://assets/Loading screen/backg_loading.png" id="1_kxe27"]
 [ext_resource type="FontFile" uid="uid://cys28ednmrwfa" path="res://assets/Bitmgothic/Bitmgothic.otf" id="2_vbe0t"]
+[ext_resource type="Script" path="res://scripts/Score_points.gd" id="4_5f73m"]
 
 [node name="GameOverScreen" type="Node2D"]
 script = ExtResource("1_jso4r")
@@ -41,9 +42,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Score" type="Label" parent="."]
-offset_left = 184.0
+texture_filter = 1
+offset_left = 224.0
 offset_top = 216.0
-offset_right = 540.0
+offset_right = 580.0
 offset_bottom = 428.0
 theme_override_fonts/font = ExtResource("2_vbe0t")
 theme_override_font_sizes/font_size = 40
@@ -61,6 +63,16 @@ offset_bottom = 560.0
 theme_override_fonts/font = ExtResource("2_vbe0t")
 theme_override_font_sizes/font_size = 50
 text = "Try again?"
+
+[node name="Score_points" type="Label" parent="."]
+texture_filter = 1
+offset_left = 696.0
+offset_top = 216.0
+offset_right = 1052.0
+offset_bottom = 428.0
+theme_override_fonts/font = ExtResource("2_vbe0t")
+theme_override_font_sizes/font_size = 40
+script = ExtResource("4_5f73m")
 
 [connection signal="pressed" from="background/Back_to_main" to="." method="_on_back_to_main_pressed"]
 [connection signal="pressed" from="try_again" to="." method="_on_try_again_pressed"]
