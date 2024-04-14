@@ -22,6 +22,10 @@ var hurt_animation_timer_max = 0.5
 
 var life_points = 3
 var collect_points = 0
+var emporio_points = 0
+var polnareff_points = 0
+
+var played_time = 0.0
 
 var collision = null
 
@@ -31,7 +35,9 @@ func _ready():
 
 
 func _process(delta):
-	# capture input 
+	played_time += delta
+	
+	# capture input 	
 	var movement = Vector2(0, -speed)
 	if (Input.is_action_just_pressed("ui_right") and current_pos < 2):
 		current_pos += 1
@@ -49,6 +55,10 @@ func _process(delta):
 			life_points -= 1
 		elif (collision.get_collider().name.contains("collectable")):
 			player_collect.emit(collision.get_collider())
+			if (collision.get_collider().type == 0):
+				emporio_points += 1
+			elif (collision.get_collider().type == 1):
+				polnareff_points += 1
 			collect_points += 1
 		elif (collision.get_collider().name.contains("clock")):
 			player_clock_collect.emit(collision.get_collider())
@@ -66,6 +76,9 @@ func _process(delta):
 			hurt = false
 			
 			if (life_points == 0):
+				GlobalVars.score = floor(played_time * 10) + (emporio_points * 50) + (polnareff_points * 35)
+				GlobalVars.emporios = emporio_points
+				GlobalVars.turtles = polnareff_points
 				get_tree().change_scene_to_file("res://Scenes/game_over_screen.tscn")
 				
 			
