@@ -3,6 +3,7 @@ extends CharacterBody2D
 # Signals
 signal player_hurt(collider)
 signal player_collect(collider)
+signal player_clock_collect(collider)
 
 # Subnodes
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
@@ -49,7 +50,9 @@ func _process(delta):
 		elif (collision.get_collider().name.contains("collectable")):
 			player_collect.emit(collision.get_collider())
 			collect_points += 1
-			
+		elif (collision.get_collider().name.contains("clock")):
+			player_clock_collect.emit(collision.get_collider())
+			speed_multiplier *= 1.25
 		
 	# set sprite
 	if (hurt):
