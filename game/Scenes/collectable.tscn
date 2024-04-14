@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://de1i14ln0jb2t"]
+[gd_scene load_steps=7 format=3 uid="uid://de1i14ln0jb2t"]
 
 [ext_resource type="Texture2D" uid="uid://7qnyc6nduhdn" path="res://assets/Collectables/collectables.png" id="1_763cq"]
+[ext_resource type="Script" path="res://scripts/collectable.gd" id="1_kn8dl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ga112"]
 height = 22.0
@@ -33,6 +34,7 @@ animations = [{
 }]
 
 [node name="collectable" type="StaticBody2D"]
+script = ExtResource("1_kn8dl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_ga112")
